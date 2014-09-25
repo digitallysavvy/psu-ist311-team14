@@ -41,7 +41,7 @@ import paintapp.Brush.Style;
 public class CanvasPanel extends JPanel implements MouseMotionListener {
     
     Brush brush;
-    ArrayList <Point> drawing;
+    ArrayList <PaintPoint> drawing;
     
     public CanvasPanel(){
         super();
@@ -71,7 +71,7 @@ public class CanvasPanel extends JPanel implements MouseMotionListener {
     public void mouseDragged(MouseEvent evt) {
 
         //Capture pointer movement
-        Point pt = evt.getPoint();
+        PaintPoint pt = new PaintPoint (evt.getPoint(), brush, Color.BLACK);
         drawing.add(pt);
         Graphics graphics = getGraphics();
         graphics.fillRect((int)pt.getX(), (int) pt.getY(), brush.getHeight(), brush.getWidth());
