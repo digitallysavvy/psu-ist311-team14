@@ -59,8 +59,8 @@ public class CanvasPanel extends JPanel implements MouseMotionListener {
     	super.paintComponent(g); 
   
         if(!drawing.isEmpty()){
-            for (Point pt : drawing) {
-                g.fillRect((int) pt.getX(), (int) pt.getY(), brush.getHeight(), brush.getWidth());
+            for (PaintPoint pt : drawing) {
+                g.fillRect((int) pt.getX(), (int) pt.getY(), pt.brush.getHeight(), pt.brush.getWidth());
             }
             
         }
