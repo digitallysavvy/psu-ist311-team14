@@ -29,6 +29,7 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 import paintapp.Brush.Size;
 import paintapp.Brush.Style;
@@ -40,13 +41,13 @@ import paintapp.Brush.Style;
 public class CanvasPanel extends JPanel implements MouseMotionListener {
     
     Brush brush;
-    Point[] drawing;
+    ArrayList <Point> drawing;
     
     public CanvasPanel(){
         super();
         setBackground(Color.white);
         brush = new Brush(Size.MEDIUM, Style.SQUARE);
-        drawing = new Point[100000];
+        drawing = new ArrayList<>();
         
         //add listener for mouse movement
         addMouseMotionListener(this);
@@ -57,13 +58,13 @@ public class CanvasPanel extends JPanel implements MouseMotionListener {
 	{
     	super.paintComponent(g); 
   
-        //redraw the users drawing
-        for(Point pt : drawing){
-            if(drawing.length <= 0){
-               g.fillRect((int)pt.getX(), (int) pt.getY(), brush.getHeight(), brush.getWidth()); 
+        if(!drawing.isEmpty()){
+            for (Point pt : drawing) {
+                g.fillRect((int) pt.getX(), (int) pt.getY(), brush.getHeight(), brush.getWidth());
             }
             
         }
+        
     }
 
     @Override
@@ -71,11 +72,7 @@ public class CanvasPanel extends JPanel implements MouseMotionListener {
 
         //Capture pointer movement
         Point pt = evt.getPoint();
-        int index = 0;
-        if (drawing.length > 0){
-            index = drawing.length;
-        }
-        drawing[index] = pt;
+        drawing.add(pt);
         Graphics graphics = getGraphics();
         graphics.fillRect((int)pt.getX(), (int) pt.getY(), brush.getHeight(), brush.getWidth());
         
