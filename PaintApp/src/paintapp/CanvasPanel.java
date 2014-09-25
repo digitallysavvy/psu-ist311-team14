@@ -59,7 +59,10 @@ public class CanvasPanel extends JPanel implements MouseMotionListener {
   
         //redraw the users drawing
         for(Point pt : drawing){
-            g.fillRect((int)pt.getX(), (int) pt.getY(), brush.getHeight(), brush.getWidth());
+            if(drawing.length <= 0){
+               g.fillRect((int)pt.getX(), (int) pt.getY(), brush.getHeight(), brush.getWidth()); 
+            }
+            
         }
     }
 
@@ -70,7 +73,7 @@ public class CanvasPanel extends JPanel implements MouseMotionListener {
         Point pt = evt.getPoint();
         int index = 0;
         if (drawing.length > 0){
-            index = drawing.length - 1;
+            index = drawing.length;
         }
         drawing[index] = pt;
         Graphics graphics = getGraphics();
