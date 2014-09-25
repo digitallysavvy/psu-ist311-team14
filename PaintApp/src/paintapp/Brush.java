@@ -22,37 +22,75 @@
  * THE SOFTWARE.
  */
 
-
 package paintapp;
-
-import java.awt.BorderLayout;
-import javax.swing.JFrame;
 
 /**
  *
- * @author hwf5000
+ * @author macbook
  */
-public class OuterFrame extends JFrame {
+public class Brush {
     
-    ShellPanel mainPanel;
+    int height;
+    int width;
     
-    public OuterFrame(){
-        
-        super("Team 14 - Paint App");
-        
-        //Create Settings
-        
-        
-        //Create main panel
-        mainPanel = new ShellPanel();
-        
-        //Set Frame Propertises
-        getContentPane().setLayout(new BorderLayout());
-        getContentPane().add(mainPanel,"Center");
+    public enum Size {
+        SMALL, MEDIUM, LARGE
+    }
     
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-	setSize (800, 480);
-	setVisible(true);
+    public enum Style {
+        TALL, WIDE, SQUARE
+    }
+    
+    
+    public Brush(Size size, Style style){
+        
+        //set brush size
+        switch(size){
+            
+            case SMALL:
+                height = 5;
+                width = 5;
+                break;
+            
+            case MEDIUM:
+                height = 10;
+                width = 10;
+                break;
+            
+            case LARGE:
+                height = 15;
+                width = 15;
+        }
+        
+        //set brush style
+        switch(style){
+            
+            case TALL:
+                height += 2;
+                width -= 2;
+                break;
+            
+            case WIDE:
+                height -= 2;
+                width += 2;
+                break;
+            
+            case SQUARE:
+                break;
+            
+            default:
+                break;
+        }
         
     }
+    
+    public int getHeight(){
+        return height;
+    }
+    
+    public int getWidth(){
+        return width;
+    }
+    
+    
 }

@@ -22,37 +22,27 @@
  * THE SOFTWARE.
  */
 
-
 package paintapp;
 
 import java.awt.BorderLayout;
-import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
- * @author hwf5000
+ * @author macbook
  */
-public class OuterFrame extends JFrame {
+public class ShellPanel extends JPanel {
     
-    ShellPanel mainPanel;
+    CanvasPanel canvas;
     
-    public OuterFrame(){
-        
-        super("Team 14 - Paint App");
-        
-        //Create Settings
-        
-        
-        //Create main panel
-        mainPanel = new ShellPanel();
-        
-        //Set Frame Propertises
-        getContentPane().setLayout(new BorderLayout());
-        getContentPane().add(mainPanel,"Center");
     
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-	setSize (800, 480);
-	setVisible(true);
+    public ShellPanel(){
+        super();
+        setLayout(new BorderLayout());
+        canvas = new CanvasPanel();
+        add(canvas);
         
     }
+    
+    
 }
