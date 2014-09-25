@@ -13,7 +13,7 @@ Features
 - Paints graphic to the screen
 - Supports 3 Brush sizes (SMALL, MEDIUM, LARGE)
 - Supports 3 Brush shapes (TALL, WIDE, SQUARE)
--- default brush size/shape is MEDIUM SQUARE
+- default brush size/shape is MEDIUM SQUARE
 
 
 
