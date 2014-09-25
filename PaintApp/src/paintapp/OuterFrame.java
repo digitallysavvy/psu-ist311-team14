@@ -22,19 +22,37 @@
  * THE SOFTWARE.
  */
 
+
 package paintapp;
+
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
 
 /**
  *
  * @author hwf5000
  */
-public class PaintApp {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class OuterFrame extends JFrame {
     
+    MainPanel mainPanel;
+    
+    public OuterFrame(){
+        
+        super("Team 14 - Paint App");
+        
+        //Create Settings
+        
+        
+        //Create main panel
+        mainPanel = new MainPanel();
+        
+        //Set Frame Propertises
+        getContentPane().setLayout(new BorderLayout());
+        getContentPane().add(mainPanel,"Center");
+    
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+	setSize (800, 480);
+	setVisible(true);
+        
+    }
 }

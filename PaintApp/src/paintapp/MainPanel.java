@@ -24,17 +24,29 @@
 
 package paintapp;
 
+import java.awt.event.MouseMotionListener;
+import javax.swing.JPanel;
+
 /**
  *
  * @author hwf5000
  */
-public class PaintApp {
+public class MainPanel extends JPanel implements MouseMotionListener {
+    
+    public MainPanel(){
+        super();
+    }
+    
+    
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    @Override
+    public void mouseDragged(java.awt.event.MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseMoved(java.awt.event.MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
