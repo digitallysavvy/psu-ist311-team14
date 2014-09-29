@@ -34,13 +34,17 @@ import javax.swing.JPanel;
 public class ShellPanel extends JPanel {
     
     CanvasPanel canvas;
+    ColorChooser colorPanel;
     
     
     public ShellPanel(){
         super();
         setLayout(new BorderLayout());
         canvas = new CanvasPanel();
+        colorPanel = new ColorChooser(canvas);
         add(canvas);
+        add(colorPanel, BorderLayout.NORTH);
+        
         
     }
     
