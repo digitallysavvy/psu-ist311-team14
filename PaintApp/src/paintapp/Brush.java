@@ -24,6 +24,8 @@
 
 package paintapp;
 
+import java.awt.Color;
+
 /**
  *
  * @author macbook
@@ -32,6 +34,9 @@ public class Brush {
     
     int height;
     int width;
+    Size size;
+    Style style;
+    Color color;
     
     public enum Size {
         SMALL, MEDIUM, LARGE
@@ -42,7 +47,10 @@ public class Brush {
     }
     
     
-    public Brush(Size size, Style style){
+    public Brush(Size sz, Style st, Color c){
+        
+        size = sz;
+        style = st;
         
         //set brush size
         switch(size){
@@ -82,6 +90,8 @@ public class Brush {
                 break;
         }
         
+        color = c;
+        
     }
     
     public int getHeight(){
@@ -91,6 +101,7 @@ public class Brush {
     public int getWidth(){
         return width;
     }
+    
     
     
 }

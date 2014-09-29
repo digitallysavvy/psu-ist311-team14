@@ -26,7 +26,6 @@ package paintapp;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
@@ -43,13 +42,13 @@ public class CanvasPanel extends JPanel implements MouseMotionListener {
     Brush brush;
     ArrayList <PaintPoint> drawing;
     PaintPoint pt;
-
+    
     
     
     public CanvasPanel(){
         super();
         setBackground(Color.white);
-        brush = new Brush(Size.MEDIUM, Style.SQUARE);
+        brush = new Brush(Size.MEDIUM, Style.SQUARE, Color.BLACK);
         drawing = new ArrayList<>();
         
 
@@ -89,10 +88,16 @@ public class CanvasPanel extends JPanel implements MouseMotionListener {
 
     @Override
     public void mouseMoved(MouseEvent evt) {
-
-        
-        
+    
     }
     
     
+    //Modify the brush
+    public void changeBrush(Size sz, Style st, Color c){
+        brush = new Brush(sz, st, c);
+    }
+    
+    public void changeColor(Color c){
+        brush = new Brush(brush.size, brush.style, c);
+    }
 }
