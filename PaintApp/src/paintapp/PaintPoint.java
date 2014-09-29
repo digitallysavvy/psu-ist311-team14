@@ -34,13 +34,12 @@ import java.awt.Point;
 public class PaintPoint extends Point {
     
     Brush brush;
-    Color color;
     
     
     
-    public PaintPoint(Point p, Brush b, Color c){
+    public PaintPoint(Point p, Brush b){
         super(p);
         brush = b;
-        color = c;
+        
     }
 }
