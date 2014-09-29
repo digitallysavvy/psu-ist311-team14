@@ -45,7 +45,7 @@ public class ColorChooser extends JPanel implements ActionListener{
     public ColorChooser(CanvasPanel c){
         super();
         setLayout(new FlowLayout());
-        this.canvas = c;
+        canvas = c;
 
         
         red = new JButton("Red");

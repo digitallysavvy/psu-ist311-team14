@@ -102,6 +102,16 @@ public class Brush {
         return width;
     }
     
+    public Size getSize(){
+        return size;
+    }
     
+    public Style getStyle(){
+        return style;
+    }
+    
+    public Color getColor(){
+        return color;
+    }
     
 }
