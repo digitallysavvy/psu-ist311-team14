@@ -35,11 +35,11 @@ import java.awt.FlowLayout;
 
 /**
  *
- * @author Aldrich
+ * @author Aldrich and hwf5000
  */
 public class ColorChooser extends JPanel implements ActionListener{
     
-    JButton red,blue,green,yellow, white, black, pink, magenta, orange, grey;
+    ColorButton red,blue,green,yellow, white, black, pink, magenta, orange, grey;
     CanvasPanel canvas;
     
     public ColorChooser(CanvasPanel c){
@@ -48,15 +48,15 @@ public class ColorChooser extends JPanel implements ActionListener{
         canvas = c;
 
         
-        red = new JButton("Red");
-        blue = new JButton("Blue");
-        green = new JButton("Green");
-        yellow = new JButton("Yellow");
-        white = new JButton("White");
-        black = new JButton("Black");
-        pink = new JButton("Pink");
-        magenta = new JButton("Magenta");
-        orange = new JButton("Orange");
+        red = new ColorButton("Red", Color.RED);
+        blue = new ColorButton("Blue", Color.BLUE);
+        green = new ColorButton("Green", Color.GREEN);
+        yellow = new ColorButton("Yellow", Color.YELLOW);
+        white = new ColorButton("White", Color.WHITE);
+        black = new ColorButton("black", Color.BLACK);
+        pink = new ColorButton("Pink", Color.PINK);
+        magenta = new ColorButton("Magenta", Color.MAGENTA);
+        orange = new ColorButton("Oragne", Color.ORANGE);
         
         //Attaches ActionListener to buttons
         red.addActionListener(this);
