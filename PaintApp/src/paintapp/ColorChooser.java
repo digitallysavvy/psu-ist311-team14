@@ -84,58 +84,59 @@ public class ColorChooser extends JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
        Object obj = e.getSource();
+       //whats the point of this graphics object???
        Graphics graphics = getGraphics();
        if(obj == blue){
            if(canvas.brush.color != null){
-            canvas.brush.color = Color.BLUE;
+            canvas.changeColor(Color.BLUE);
             repaint();
            }
        }
        if(obj == red){
            if(canvas.brush.color != null){
-            canvas.brush.color = Color.RED;
+            canvas.changeColor(Color.RED);
             repaint();
            }
        }
        if(obj == green){
            if(canvas.brush.color != null){
-            canvas.brush.color = Color.GREEN;
+            canvas.changeColor(Color.GREEN);
             repaint();
            }
        }
        if(obj == yellow){
            if(canvas.brush.color != null){
-            canvas.brush.color = Color.YELLOW;
+            canvas.changeColor(Color.YELLOW);
             repaint();
            }
        }
        if(obj == white){
            if(canvas.brush.color != null){
-            canvas.brush.color = Color.WHITE;
+            canvas.changeColor(Color.WHITE);
             repaint();
            }
        }
        if(obj == black){
            if(canvas.brush.color != null){
-            canvas.brush.color = Color.BLACK;
+            canvas.changeColor(Color.BLACK);
             repaint();
            }
        }
        if(obj == pink){
            if(canvas.brush.color != null){
-            canvas.brush.color = Color.PINK;
+            canvas.changeColor(Color.PINK);
             repaint();
            }
        }
        if(obj == magenta){
            if(canvas.brush.color != null){
-            canvas.brush.color = Color.MAGENTA;
+            canvas.changeColor(Color.MAGENTA);
             repaint();
            }
        }
        if(obj == orange){
            if(canvas.brush.color != null){
-            canvas.brush.color = Color.ORANGE;
+            canvas.changeColor(Color.ORANGE);
             repaint();
            }
        }
