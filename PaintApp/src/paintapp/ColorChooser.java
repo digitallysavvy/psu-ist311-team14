@@ -70,12 +70,12 @@ public class ColorChooser extends JPanel implements ActionListener{
         orange.addActionListener(this);
         
         //Add buttons to panel
+        add(black);
         add(red);
         add(blue);
         add(green);
         add(yellow);
         add(white);
-        add(black);
         add(pink);
         add(magenta);
         add(orange);

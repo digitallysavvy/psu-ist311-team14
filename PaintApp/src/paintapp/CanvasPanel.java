@@ -51,8 +51,6 @@ public class CanvasPanel extends JPanel implements MouseMotionListener {
         brush = new Brush(Size.MEDIUM, Style.SQUARE, Color.BLACK);
         drawing = new ArrayList<>();
         
-
-        
         //add listener for mouse movement
         addMouseMotionListener(this);
     }
@@ -65,7 +63,7 @@ public class CanvasPanel extends JPanel implements MouseMotionListener {
   
         if(!drawing.isEmpty()){
             for (PaintPoint pt : drawing) {
-                g.setColor(brush.color);
+                g.setColor(pt.brush.getColor());
                 g.fillRect((int) pt.getX(), (int) pt.getY(), pt.brush.getHeight(), pt.brush.getWidth());
             }
             
@@ -77,12 +75,11 @@ public class CanvasPanel extends JPanel implements MouseMotionListener {
     public void mouseDragged(MouseEvent evt) {
 
         //Capture pointer movement
-        drawing = new ArrayList<>();
         pt = new PaintPoint (evt.getPoint(), brush);
         drawing.add(pt);
         Graphics graphics = getGraphics();
-        graphics.setColor(brush.color);
-        graphics.fillRect((int)pt.getX(), (int) pt.getY(), brush.getHeight(), brush.getWidth());
+        graphics.setColor(pt.brush.getColor());
+        graphics.fillRect((int)pt.getX(), (int) pt.getY(), pt.brush.getHeight(), pt.brush.getWidth());
 
     }
 
