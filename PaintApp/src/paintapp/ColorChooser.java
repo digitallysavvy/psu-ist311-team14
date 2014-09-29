@@ -37,6 +37,7 @@ import java.awt.FlowLayout;
  *
  * @author Aldrich and hwf5000
  */
+
 public class ColorChooser extends JPanel implements ActionListener{
     
     ColorButton red,blue,green,yellow, white, black, pink, magenta, orange, grey;

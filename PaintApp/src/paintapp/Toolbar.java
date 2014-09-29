@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2014 Aldrich.
+ * Copyright 2014 macbook.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,24 +21,53 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
-
 package paintapp;
 
-import java.awt.Color;
-import javax.swing.JButton;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
 /**
  *
- * @author hwf5000
+ * @author Erik
  */
 
-public class ColorButton extends JButton {
-
-    public ColorButton(String txt, Color bg) {
-        super(txt);
-        setBackground(bg);
-        setOpaque(true);
+public class Toolbar extends JPanel implements ActionListener {
+    JToolBar bar;
+    Color eraser;
+    Color bucket;
+    
+    public Toolbar() {
+       super();
+       eraser = new Color(0);
+       bucket = new Color(0);
+       
+       showToolbar();
     }
-}   
+    
+    private void showToolbar() {
+        
+        bar = new JToolBar();
+        
+        bar.add(new JButton("Eraser"));
+        
+        bar.add(new JButton("Bucket"));
+        
+        bar.setMargin(new Insets(5, 5, 5, 5));
+        
+        bar.setRollover(true);
+        
+        bar.setFloatable(false);
+        
+        add(bar);
+        
+        setSize(100,100);
+        setVisible(true);
+    }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+    }
+    
+}
