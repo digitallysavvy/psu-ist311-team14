@@ -28,7 +28,7 @@ import java.awt.Color;
 
 /**
  *
- * @author macbook
+ * @author hwf5000
  */
 public class Brush {
     

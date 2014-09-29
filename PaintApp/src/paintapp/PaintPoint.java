@@ -24,12 +24,11 @@
 
 package paintapp;
 
-import java.awt.Color;
 import java.awt.Point;
 
 /**
  *
- * @author macbook
+ * @author hwf5000
  */
 public class PaintPoint extends Point {
     
