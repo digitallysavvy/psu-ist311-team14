@@ -34,40 +34,42 @@ import java.awt.event.*;
 
 public class Toolbar extends JPanel implements ActionListener {
     JToolBar bar;
-    Color eraser;
-    Color bucket;
-    Color brush;
+    JButton eraser;
+    JButton bucket;
+    JButton brush;
     
     public Toolbar() {
        super();
-       eraser = new Color(0);
-       bucket = new Color(0);
-       brush = new Color(0);
+       eraser = new JButton("Eraser");
+       bucket = new JButton("Bucket");
+       brush = new JButton("Brush");
        
-       showToolbar();
-    }
-    
-    private void showToolbar() {
+       bar = new JToolBar();
         
-        bar = new JToolBar();
+       bar.add(brush);
         
-        bar.add(new JButton("Brush"));
+       bar.add(eraser);
         
-        bar.add(new JButton("Eraser"));
+       bar.add(bucket);
         
-        bar.add(new JButton("Bucket"));
+       bar.setMargin(new Insets(5, 5, 5, 5));
         
-        bar.setMargin(new Insets(5, 5, 5, 5));
+       bar.setRollover(true);
         
-        bar.setRollover(true);
+       bar.setFloatable(false);
         
-        bar.setFloatable(false);
-        
-        add(bar);
+       brush.addActionListener(this);
+       
+       eraser.addActionListener(this);
+       
+       bucket.addActionListener(this);
+       
+       add(bar);
         
         setSize(100,100);
         setVisible(true);
     }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
