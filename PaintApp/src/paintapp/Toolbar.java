@@ -36,11 +36,13 @@ public class Toolbar extends JPanel implements ActionListener {
     JToolBar bar;
     Color eraser;
     Color bucket;
+    Color brush;
     
     public Toolbar() {
        super();
        eraser = new Color(0);
        bucket = new Color(0);
+       brush = new Color(0);
        
        showToolbar();
     }
@@ -48,6 +50,8 @@ public class Toolbar extends JPanel implements ActionListener {
     private void showToolbar() {
         
         bar = new JToolBar();
+        
+        bar.add(new JButton("Brush"));
         
         bar.add(new JButton("Eraser"));
         
