@@ -29,7 +29,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author macbook
+ * @author hwf5000, Aldrich, Erik
  */
 public class ShellPanel extends JPanel {
     

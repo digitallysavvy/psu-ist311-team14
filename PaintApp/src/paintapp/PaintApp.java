@@ -26,7 +26,7 @@ package paintapp;
 
 /**
  *
- * @author hwf5000
+ * @author hwf5000, Aldrich, Erik
  */
 public class PaintApp {
 

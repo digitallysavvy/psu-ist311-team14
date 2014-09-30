@@ -48,7 +48,8 @@ public class Brush {
     
     
     public Brush(Size sz, Style st, Color c){
-        
+
+        //set brush size and style
         size = sz;
         style = st;
         
@@ -60,15 +61,17 @@ public class Brush {
                 width = 5;
                 break;
             
-            case MEDIUM:
-                height = 10;
-                width = 10;
-                break;
-            
             case LARGE:
                 height = 15;
                 width = 15;
-        }
+                break;
+                
+            case MEDIUM:
+            default:
+                height = 10;
+                width = 10;
+                break;
+        }  
         
         //set brush style
         switch(style){
@@ -84,8 +87,6 @@ public class Brush {
                 break;
             
             case SQUARE:
-                break;
-            
             default:
                 break;
         }
