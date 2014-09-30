@@ -73,7 +73,21 @@ public class Toolbar extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        Object btn = e.getSource();
         
-    }
+        if (btn == brush) {           
+        
+        
+        }
+        else if (btn == eraser) {
+        
+        
+        }
+        
+        else if (btn == bucket) {
+            
+            
+        }
     
+    }
 }
