@@ -26,10 +26,11 @@ package paintapp;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import paintapp.CanvasPanel.Tool;
 
 /**
  *
- * @author Erik
+ * @author Erik and hwf5000
  */
 
 public class Toolbar extends JPanel implements ActionListener {
@@ -37,31 +38,27 @@ public class Toolbar extends JPanel implements ActionListener {
     JButton eraser;
     JButton bucket;
     JButton brush;
+    CanvasPanel canvas;
     
-    public Toolbar() {
+    public Toolbar(CanvasPanel c) {
        super();
        eraser = new JButton("Eraser");
        bucket = new JButton("Bucket");
        brush = new JButton("Brush");
+       canvas = c;
        
        bar = new JToolBar();
         
-       bar.add(brush);
-        
-       bar.add(eraser);
-        
+       bar.add(brush); 
+       bar.add(eraser); 
        bar.add(bucket);
         
        bar.setMargin(new Insets(5, 5, 5, 5));
-        
        bar.setRollover(true);
-        
        bar.setFloatable(false);
         
        brush.addActionListener(this);
-       
        eraser.addActionListener(this);
-       
        bucket.addActionListener(this);
        
        add(bar);
@@ -76,17 +73,14 @@ public class Toolbar extends JPanel implements ActionListener {
         Object btn = e.getSource();
         
         if (btn == brush) {           
-        
-        
+            canvas.tool = Tool.BRUSH;
         }
         else if (btn == eraser) {
-        
-        
+            canvas.tool = Tool.ERASER;
         }
         
         else if (btn == bucket) {
-            
-            
+            canvas.tool = Tool.BUCKET;
         }
     
     }

@@ -43,7 +43,7 @@ public class ShellPanel extends JPanel {
         setLayout(new BorderLayout());
         canvas = new CanvasPanel();
         colorPanel = new ColorChooser(canvas);
-        toolbarPanel = new Toolbar();
+        toolbarPanel = new Toolbar(canvas);
         add(canvas, BorderLayout.CENTER);
         add(colorPanel, BorderLayout.NORTH);
         add(toolbarPanel, BorderLayout.SOUTH);
