@@ -112,6 +112,16 @@ public class CanvasPanel extends JPanel implements MouseMotionListener, MouseLis
             drawing = new ArrayList<>();
             setBackground(brush.getColor());
         }
+       
+       if (tool == Tool.BRUSH) {
+            //Capture pointer movement
+            pt = new PaintPoint(evt.getPoint(), brush);
+            drawing.add(pt);
+            Graphics graphics = getGraphics();
+            graphics.setColor(pt.brush.getColor());
+            graphics.fillRect((int) pt.getX(), (int) pt.getY(), pt.brush.getHeight(), pt.brush.getWidth());
+
+        }
        repaint();
     }
     

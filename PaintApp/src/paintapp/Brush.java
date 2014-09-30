@@ -77,13 +77,13 @@ public class Brush {
         switch(style){
             
             case TALL:
-                height += 2;
-                width -= 2;
+                height += 4;
+                width -= 4;
                 break;
             
             case WIDE:
-                height -= 2;
-                width += 2;
+                height -= 4;
+                width += 4;
                 break;
             
             case SQUARE:
